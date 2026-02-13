@@ -91,7 +91,7 @@ const DocsLayout = () => {
                             />
                         </div>
                         <a
-                            href="https://www.npmjs.com/package/0utmail"
+                            href="https://www.npmjs.com/package/0utmailcore"
                             target="_blank"
                             rel="noreferrer"
                             className="text-[13px] text-[#B7B1B1] hover:text-[#F2EDED] transition-colors hidden sm:block"
@@ -99,7 +99,7 @@ const DocsLayout = () => {
                             npm
                         </a>
                         <a
-                            href="https://github.com"
+                            href="https://github.com/Untitled-Master/docs0utmail-js"
                             target="_blank"
                             rel="noreferrer"
                             className="p-2 text-[#B7B1B1] hover:text-[#F2EDED] transition-colors"
@@ -161,7 +161,7 @@ const DocsLayout = () => {
 
                         <div className="pt-6 border-t border-[#B7B1B1]/10">
                             <p className="px-3 text-[10px] font-bold text-[#B7B1B1] font-mono uppercase tracking-widest mb-3">Links</p>
-                            <a href="https://www.npmjs.com/package/0utmail" target="_blank" rel="noreferrer" className="flex items-center gap-3 px-3 py-2 text-[13px] text-[#B7B1B1] hover:text-[#F2EDED] transition-colors">
+                            <a href="https://www.npmjs.com/package/0utmailcore" target="_blank" rel="noreferrer" className="flex items-center gap-3 px-3 py-2 text-[13px] text-[#B7B1B1] hover:text-[#F2EDED] transition-colors">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg" alt="Npm Package" className="w-6 h-6" />
                                 Npm Package
                                 <ChevronRight size={12} className="ml-auto opacity-50" />
@@ -180,8 +180,8 @@ const DocsLayout = () => {
                             <p>© 2026 0utmail. All rights reserved.</p>
                             <div className="flex gap-6">
                                 <a href="#" className="hover:text-[#F2EDED] transition-colors">License</a>
-                                <a href="#" className="hover:text-[#F2EDED] transition-colors">npm</a>
-                                <a href="#" className="hover:text-[#F2EDED] transition-colors">GitHub</a>
+                                <a href="https://www.npmjs.com/package/0utmailcore" className="hover:text-[#F2EDED] transition-colors">npm</a>
+                                <a href="https://github.com/Untitled-Master/docs0utmail-js" className="hover:text-[#F2EDED] transition-colors">GitHub</a>
                             </div>
                         </div>
                     </footer>
