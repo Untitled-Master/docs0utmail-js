@@ -9,7 +9,6 @@ import {
     Send,
     Mail,
     Settings,
-    Database as DatabaseIcon,
     Github,
     Hexagon,
     ChevronRight
@@ -47,7 +46,7 @@ const DocsLayout = () => {
         { to: '/send', icon: Send, label: 'Sending Emails' },
         { to: '/read', icon: Mail, label: 'Reading Emails' },
         { to: '/api', icon: Settings, label: 'API Reference' },
-        { to: '/database', icon: DatabaseIcon, label: 'Database Structure' },
+        { to: '/pricing', icon: Hexagon, label: 'Pricing & Credits' }
     ];
 
     const filteredItems = menuItems.filter(item =>

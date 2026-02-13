@@ -5,7 +5,7 @@ import Authentication from './pages/Authentication';
 import SendingEmails from './pages/SendingEmails';
 import ReadingEmails from './pages/ReadingEmails';
 import ApiReference from './pages/ApiReference';
-import Database from './pages/Database';
+import PricingApi from './pages/PricingApi';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route path="send" element={<SendingEmails />} />
           <Route path="read" element={<ReadingEmails />} />
           <Route path="api" element={<ApiReference />} />
-          <Route path="database" element={<Database />} />
+          <Route path="pricing" element={<PricingApi />} />
           <Route path="*" element={<Introduction />} />
         </Route>
       </Routes>
