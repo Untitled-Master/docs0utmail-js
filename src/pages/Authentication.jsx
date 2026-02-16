@@ -1,6 +1,6 @@
 import React from 'react';
 import CodeBlock from '../components/Docs/CodeBlock';
-import { Key, AlertTriangle } from 'lucide-react';
+import { Key, AlertTriangle, Terminal } from 'lucide-react';
 
 const Authentication = () => {
     return (
@@ -16,21 +16,28 @@ const Authentication = () => {
             <div className="w-12 h-1 bg-[#F2EDED] mb-8"></div>
             <p className="text-[#B7B1B1] mb-12 leading-relaxed text-base max-w-2xl">
                 Before you can start sending or reading emails, you need to set up your credentials.
-                0utmail uses a two-part verification system: an <strong className="text-[#F2EDED]">API Key</strong> and <strong className="text-[#F2EDED]">Google OAuth2</strong>.
+                0utmail provides a dedicated CLI tool to generate your <strong className="text-[#F2EDED]">API Key</strong> and <strong className="text-[#F2EDED]">Google OAuth2</strong> tokens.
             </p>
 
             <h2 className="text-xl font-bold mt-12 mb-4 text-[#F2EDED] tracking-tight flex items-center gap-2">
                 <div className="w-6 h-6 flex items-center justify-center bg-[#F2EDED]/10 border border-[#B7B1B1]/20 rounded-sm">
                     <Key className="w-3 h-3 text-[#F2EDED]" />
                 </div>
-                The Auth Script
+                The Auth CLI
             </h2>
             <p className="text-[#B7B1B1] mb-4 text-sm">
-                The easiest way to authenticate is by using the built-in authentication script:
+                To generate your credentials, run the official authentication tool using npx:
             </p>
-            <CodeBlock code="node node_modules\0utmail\auth.js" language="bash" />
-            <p className="text-[#B7B1B1]/50 text-xs font-mono mb-2">Or strictly via node:</p>
-            <CodeBlock code="node node_modules/0utmail/auth.js" language="bash" />
+            <CodeBlock code="npx 0utmailauth" language="bash" />
+
+            <p className="text-[#B7B1B1] mt-6 mb-2 text-sm">
+                This will start a local server to handle the OAuth handshake. You should see output similar to this:
+            </p>
+            <div className="bg-[#0A0909] border border-[#B7B1B1]/20 p-4 rounded-sm font-mono text-xs mb-8">
+                <p className="text-[#B7B1B1]">PS C:\Users\dev&gt; npx 0utmailauth</p>
+                <p className="text-green-400 mt-1">&gt; 0utmailauth is running on http://localhost:4000</p>
+                <p className="text-[#F2EDED]">&gt; Open your browser to start.</p>
+            </div>
 
             <h2 className="text-xl font-bold mt-16 mb-6 text-[#F2EDED] tracking-tight">Authentication Flow</h2>
 
@@ -38,21 +45,21 @@ const Authentication = () => {
                 {[
                     {
                         step: '01',
-                        title: 'API Key Verification',
-                        desc: 'The script will prompt you for an API Key provided by your administrator. This key is used to check your credit balance and authorize library usage via Firebase.'
+                        title: 'Start the Server',
+                        desc: 'Run the npx command shown above. The tool will spin up a temporary local server on port 4000 to listen for the authentication callback from Google.'
                     },
                     {
                         step: '02',
-                        title: 'Google Account Login',
-                        desc: 'After valid API Key entry, a browser window will open (or a link will be provided) to sign in with your Google account. This authorizes 0utmail to access your Gmail.'
+                        title: 'Browser Authorization',
+                        desc: 'Open http://localhost:4000 in your browser. Follow the on-screen instructions to sign in with your Google account and authorize 0utmail to access your Gmail.'
                     },
                     {
                         step: '03',
-                        title: 'Local Storage',
+                        title: 'Credential Generation',
                         desc: null,
                         custom: (
                             <div className="text-sm text-[#B7B1B1]">
-                                <p className="mb-3">Upon successful login, two files are created in your project root:</p>
+                                <p className="mb-3">Upon successful signup/login, the tool will generate two essential files. Ensure these are placed in your project root:</p>
                                 <div className="space-y-2">
                                     <div className="flex items-center gap-2 p-2 border border-[#B7B1B1]/10 bg-[#0A0909] rounded-sm">
                                         <code className="text-[11px] font-mono text-[#F2EDED]">token.json</code>
