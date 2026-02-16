@@ -11,7 +11,9 @@ import {
     Settings,
     Github,
     Hexagon,
-    ChevronRight
+    ChevronRight,
+    Bot,
+    Server
 } from 'lucide-react';
 
 const SidebarItem = ({ to, icon: Icon, children, onClick }) => (
@@ -40,16 +42,28 @@ const DocsLayout = () => {
         window.scrollTo(0, 0);
     }, [location]);
 
-    const menuItems = [
+    // 1. Getting Started Group
+    const gettingStartedItems = [
         { to: '/', icon: BookOpen, label: 'Introduction' },
         { to: '/auth', icon: Key, label: 'Authentication' },
         { to: '/send', icon: Send, label: 'Sending Emails' },
         { to: '/read', icon: Mail, label: 'Reading Emails' },
         { to: '/api', icon: Settings, label: 'API Reference' },
+        { to: '/ai', icon: Bot, label: 'AI System Prompt' }, // Added AI Page
         { to: '/pricing', icon: Hexagon, label: 'Pricing & Credits' }
     ];
 
-    const filteredItems = menuItems.filter(item =>
+    // 2. Famous Frameworks Group
+    const frameworkItems = [
+        { to: '/frameworks/express', icon: Server, label: 'Express.js' }
+    ];
+
+    // Search Logic
+    const filteredGettingStarted = gettingStartedItems.filter(item =>
+        item.label.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    const filteredFrameworks = frameworkItems.filter(item =>
         item.label.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
@@ -150,14 +164,27 @@ const DocsLayout = () => {
                             />
                         </div>
 
+                        {/* Section 1: Getting Started */}
                         <div className="space-y-1">
                             <p className="px-3 text-[10px] font-bold text-[#B7B1B1] font-mono uppercase tracking-widest mb-3">Getting Started</p>
-                            {filteredItems.map((item) => (
+                            {filteredGettingStarted.map((item) => (
                                 <SidebarItem key={item.to} to={item.to} icon={item.icon} onClick={() => setIsSidebarOpen(false)}>
                                     {item.label}
                                 </SidebarItem>
                             ))}
                         </div>
+
+                        {/* Section 2: Famous Frameworks */}
+                        {(filteredFrameworks.length > 0) && (
+                            <div className="space-y-1 pt-4">
+                                <p className="px-3 text-[10px] font-bold text-[#B7B1B1] font-mono uppercase tracking-widest mb-3">Famous Frameworks</p>
+                                {filteredFrameworks.map((item) => (
+                                    <SidebarItem key={item.to} to={item.to} icon={item.icon} onClick={() => setIsSidebarOpen(false)}>
+                                        {item.label}
+                                    </SidebarItem>
+                                ))}
+                            </div>
+                        )}
 
                         <div className="pt-6 border-t border-[#B7B1B1]/10">
                             <p className="px-3 text-[10px] font-bold text-[#B7B1B1] font-mono uppercase tracking-widest mb-3">Links</p>

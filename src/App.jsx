@@ -6,6 +6,8 @@ import SendingEmails from './pages/SendingEmails';
 import ReadingEmails from './pages/ReadingEmails';
 import ApiReference from './pages/ApiReference';
 import PricingApi from './pages/PricingApi';
+import AiMarkdown from './pages/AiMarkdown';
+import Express from './pages/Frameworks/Express';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="read" element={<ReadingEmails />} />
           <Route path="api" element={<ApiReference />} />
           <Route path="pricing" element={<PricingApi />} />
+          <Route path="ai" element={<AiMarkdown />} />
+          <Route path="frameworks/express" element={<Express />} />
           <Route path="*" element={<Introduction />} />
         </Route>
       </Routes>
