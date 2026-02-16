@@ -141,6 +141,6 @@ We utilize a transparent credit system to manage API usage.
   <p>
     Built with ❤️ for developers.
     <br/>
-    <a href="docs.0utmail.me">Documentation</a> • <a href="https://github.com/Untitled-Master/docs0utmail-js/issues">Issues</a> • <a href="0utmail.me">Website</a>
+    <a href="https://decs.0utmail.me/">Documentation</a> • <a href="https://github.com/Untitled-Master/docs0utmail-js/issues">Issues</a> • <a href="https://0utmail.me/">Website</a>
   </p>
 </div>
